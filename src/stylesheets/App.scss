@@ -1,3 +1,135 @@
-.selected {
-   color: green;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+   font-family: 'Lato', sans-serif;
+   font-weight: 100;
+   box-sizing: border-box;
 }
+
+html {
+   font-size: 15px;
+}
+
+body {
+   margin: 0;
+   padding: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 0;
+}
+
+.selected {
+   color: #2baee7;
+}
+
+.mobile-header {
+   width: 100%;
+   background: white;
+   height: 65px;
+   position: fixed;
+   border-bottom: 1px solid #f2f2f2;
+   top: 0;
+}
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+   height: 25px;
+   margin: 21px 12px;;
+   position: absolute;
+   width: 30px;
+ }
+ 
+ /* Color/shape of burger icon bars */
+ .bm-burger-bars {
+   background: #373a47;
+   height: 2.5px !important;
+   border-radius: 3px;
+ }
+ 
+ /* Color/shape of burger icon bars on hover*/
+ 
+ .bm-cross-button {
+   height: 24px;
+   width: 24px;
+ }
+ 
+ .bm-cross {
+   background: #bdc3c7;
+ }
+ 
+ .bm-menu-wrap {
+   position: fixed;
+   height: 100%;
+ }
+ 
+ .bm-menu {
+   background: #373a47;
+   padding: 2em .5em 0;
+   font-size: 1.2rem;
+ }
+ 
+ .bm-morph-shape {
+   fill: #373a47;
+ }
+ 
+ .bm-item-list {
+   color: #b8b7ad;
+ }
+ 
+ .bm-item {
+   display: inline-block;
+   margin: 35px 10px;
+}
+ 
+ .bm-overlay {
+   background: rgba(0, 0, 0, 0.3);
+ }
+
+ button, .bm-cross {
+    height: 20px !important;
+    outline: none;
+ }
+
+ .page-content {
+    margin-top: 60px;
+    background: white;
+ }
+
+ li, li a {
+    color: white;
+    text-decoration: none;
+    outline: none;
+    text-transform: uppercase;
+    transition: .3s all ease-in-out;
+    &:hover {
+       color: #2baee7;  
+    }
+ }
+
+.fas {
+   margin: 0 10px 0 0;
+}
+
+ small {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 12px !important;
+    outline: none;
+ }
+
+ header {
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .get-a-quote {
+   position: absolute;
+   right: 0px;
+   margin: 12px 10px;
+   padding: 11px;
+   cursor: pointer;
+   text-decoration: none;
+   color: white;
+   border-radius: 2px;
+   background: #2baee7;
+ }

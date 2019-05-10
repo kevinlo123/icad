@@ -1,10 +1,12 @@
 import React, { Component }  from 'react';
+// import printer from '../../../images/printer.jpg';
 
 class Home extends Component {
    render() {
       return (
-         <div>
+         <div className="page-content">
             <h1>Home</h1>
+            {/* <img src={printer} alt="Large format screen printer"/> */}
          </div>
       );
    }
