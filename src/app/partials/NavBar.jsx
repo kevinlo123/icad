@@ -2,7 +2,6 @@ import React, { Component }  from 'react';
 import { NavLink } from 'react-router-dom';
 import { elastic as Menu } from 'react-burger-menu';
 
-
 class NavBar extends Component {
    
    constructor () {
@@ -13,15 +12,21 @@ class NavBar extends Component {
    }
 
    handleStateChange (state) {
-      this.setState({menuOpen: state.isOpen})  
+      this.setState({
+         menuOpen: state.isOpen
+      }); 
    }
    
    closeMenu () {
-      this.setState({menuOpen: false})
+      this.setState({
+         menuOpen: false
+      });
    }
 
    toggleMenu () {
-      this.setState(state => ({menuOpen: !state.menuOpen}))
+      this.setState(state => ({
+         menuOpen: !state.menuOpen
+      }));
    }
 
    render() {
@@ -49,7 +54,7 @@ class NavBar extends Component {
                   </li>
                   <li>
                      <NavLink onClick={() => this.closeMenu()} to="/graphic_design" activeClassName="selected" className={"menu-anchor"}>
-                        <i className="fas fa-sign"></i>
+                        <i className="fas fa-image"></i>
                         Graphic Design
                      </NavLink>
                   </li>

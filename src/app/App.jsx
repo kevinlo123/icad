@@ -1,5 +1,6 @@
 import React, { Component }  from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Loader from './partials/Loader.jsx'
 import NavBar from './partials/NavBar.jsx';
 import Home from './pages/home/Home.jsx';
 import Wraps from './pages/wraps/Wraps.jsx';
@@ -10,9 +11,26 @@ import Footer from './partials/Footer.jsx';
 import '../stylesheets/App.scss';
 
 class App extends Component {
+   
+   constructor() {
+      super();
+      this.state = { 
+         isLoading: true
+      }
+   }
+
+   componentDidMount() {
+      setTimeout(param => {
+         this.setState({ 
+            isLoading: false
+         })
+      }, 3000)
+   }
+
    render() {
       return (
-         <div id="app">
+         this.state.isLoading ? <Loader /> : 
+         <div id="app" className={this.state.isLoading ? 'hide': 'fadeIn'}>
             <NavBar />
             <Switch>
                <Route path="/" exact component={Home} />

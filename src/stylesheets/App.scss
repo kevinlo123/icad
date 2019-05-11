@@ -79,6 +79,9 @@ body {
  .bm-item {
    display: inline-block;
    margin: 35px 10px;
+   &:nth-of-type(1) {
+      margin-top: 15px;
+   }
 }
  
  .bm-overlay {
@@ -122,6 +125,32 @@ body {
     justify-content: space-between;
  }
 
+ .logo-container {
+   padding: 5rem;
+ }
+
+ .logo-loader {
+   margin: 0 auto;
+   display: block;
+   height: 200px;
+   width: 70px;
+   animation: crescendo .75s alternate infinite ease-in;
+}
+
+.pulse {
+   animation: pulsate 1s ease-out;
+   animation-iteration-count: infinite; 
+   opacity: 0.0;
+   border: 3px solid#2baee7;
+   border-radius: 30px;
+   height: 18px;
+   width: 18px;
+   position: relative;
+   display: inline-block;
+   margin-top: 20px;
+   text-align: center;
+}
+
  .get-a-quote {
    position: absolute;
    right: 0px;
@@ -133,3 +162,48 @@ body {
    border-radius: 2px;
    background: #2baee7;
  }
+
+ @keyframes crescendo {
+   0%   {transform: scale(.6);}
+   100% {transform: scale(1);}
+ }
+
+ @-webkit-keyframes pulse {
+   0% {
+     -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+   }
+   70% {
+       -webkit-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+   }
+   100% {
+       -webkit-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+   }
+ }
+
+ .bm-morph-shape {
+   fill: #373a47;
+   opacity: .96;
+}
+.bm-menu {
+   background: #373a47;
+   padding: 2em .5em 0;
+   font-size: 1.2rem;
+   opacity: 0.96;
+}
+.fadeIn {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .5s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
