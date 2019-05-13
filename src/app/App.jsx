@@ -7,6 +7,7 @@ import Wraps from './pages/wraps/Wraps.jsx';
 import Printing from './pages/printing/Printing.jsx';
 import GraphicDesign from './pages/graphicdesign/GraphicDesign.jsx';
 import Quote from './pages/quote/Quote.jsx';
+import About from './pages/about/About.jsx';
 import Footer from './partials/Footer.jsx';
 import '../stylesheets/App.scss';
 
@@ -19,12 +20,18 @@ class App extends Component {
       }
    }
 
-   componentDidMount() {
-      setTimeout(param => {
-         this.setState({ 
-            isLoading: false
-         })
-      }, 3000)
+   async wait(ms) {
+      return new Promise(resolve => {
+         setTimeout(resolve => {
+            this.setState({ 
+               isLoading: false
+            })
+         }, ms);
+      });
+    }
+
+   async componentDidMount() {
+      await this.wait(3000);
    }
 
    render() {
@@ -37,6 +44,7 @@ class App extends Component {
                <Route path="/vehicle_wraps" component={Wraps} />
                <Route path="/large_format_printing" component={Printing} />
                <Route path="/graphic_design" component={GraphicDesign} />
+               <Route path="/about" component={About} />
                <Route path="/quote" component={Quote} />
             </Switch>
             <Footer />
