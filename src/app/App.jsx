@@ -25,13 +25,17 @@ class App extends Component {
          setTimeout(resolve => {
             this.setState({ 
                isLoading: false
-            })
+            });
          }, ms);
       });
     }
 
    async componentDidMount() {
-      await this.wait(3000);
+      try {
+         await this.wait(3000);         
+      } catch(err) {
+         console.log(`An error occured the app component did not mount ${err}`);
+      }
    }
 
    render() {
