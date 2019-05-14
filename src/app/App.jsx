@@ -20,7 +20,7 @@ class App extends Component {
       }
    }
 
-   async wait(ms) {
+   wait(ms) {
       return new Promise(resolve => {
          setTimeout(resolve => {
             this.setState({ 
