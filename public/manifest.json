@@ -8,8 +8,14 @@
       "type": "image/x-icon"
     },
     {
-      "src": "apple-touch-icon.png",
-      "type": "image/png" 
+      "src": "apple-touch-icon.jpg",
+      "sizes": "180x180",      
+      "type": "image/jpg" 
+    },
+    {
+      "src": "microsoft-tile.jpg",
+      "sizes": "270x270",      
+      "type": "image/jpg" 
     }
   ],
   "start_url": ".",
