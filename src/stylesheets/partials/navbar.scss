@@ -3,120 +3,124 @@
 
 .mobile-header {
    width: 100%;
-   background: white;
+   background: $white;
    height: 65px;
    position: fixed;
-   border-bottom: 1px solid #f2f2f2;
+   border-bottom: 1px solid $light-grey;
    top: 0;
+   @include element(phone) {
+      color: $green;
+      position: absolute;
+      right: 160px;
+      top: 20%;
+      border: 1px solid;
+      border-radius: 50%;
+      border-color: #f2f2f2;
+      transition: .25s ease-in;
+      &:hover {
+         border-color: $green;
+      }
+      i {
+         @include margin(10px, 10px, 10px, 10px);         
+         font-size: 20px !important; 
+      }
+   }
+   @include element(get-a-quote) {
+      position: absolute;
+      right: 0px;
+      @include margin(12px, 10px, 12px, 10px);
+      margin: 12px 10px;
+      @include padding(11px, 11px, 11px, 11px);
+      cursor: pointer;
+      text-decoration: none;
+      color: $white;
+      border-radius: 2px;
+      background: $icad-blue;
+   }
 }
 
-/* Position and sizing of burger button */
+
 .bm-burger-button {
    height: 25px;
-   margin: 21px 12px;;
+   @include margin(21px, 12px, 21px, 12px);
    position: absolute;
    width: 30px;
  }
  
- /* Color/shape of burger icon bars */
- .bm-burger-bars {
-   background: #373a47;
+.bm-burger-bars {
+   background: $dark-grey;
    height: 2.5px !important;
    border-radius: 3px;
- }
- 
- /* Color/shape of burger icon bars on hover*/
- 
- .bm-cross-button {
-   height: 24px;
-   width: 24px;
- }
- 
- .bm-cross {
-   background: #bdc3c7;
- }
- 
- .bm-menu-wrap {
-   position: fixed;
-   height: 100%;
- }
- 
- .bm-menu {
-   background: #373a47;
-   padding: 2em .5em 0;
-   font-size: 1.2rem;
- }
- 
- .bm-morph-shape {
-   fill: #373a47;
- }
- 
- .bm-item-list {
-   color: #b8b7ad;
- }
- 
- .bm-item {
-   display: inline-block;
-   margin: 35px 10px;
-   &:nth-of-type(1) {
-      margin-top: 15px;
-   }
+}
+
+.bm-morph-shape {
+   opacity: .96;
 }
  
- .bm-overlay {
-   background: rgba(0, 0, 0, 0.3);
- }
+.bm-cross-button {
+   height: 24px;
+   width: 24px;
+}
 
- button, .bm-cross {
-    height: 20px !important;
-    outline: none;
- }
+.bm-cross {
+   background: $smoke-grey;
+}
 
- .mobile-list-item, .mobile-list-item--anchor {
-   color: white;
-   text-decoration: none;
+.bm-morph-shape {
+   fill: $dark-grey;
+}
+
+.bm-item {
+   display: inline-block;
+   @include margin(35px, 10px, 35px, 10px);
+   &:nth-of-type(1) {
+      @include margin(15px, 10px, 35px, 10px);      
+   }
+}
+
+.bm-menu {
+   background: $dark-grey;
+   padding: 2em .5em 0;
+   font-size: 1.2rem;
+   opacity: 0.96;
+}
+
+button, .bm-cross {
+   height: 20px !important;
    outline: none;
-   text-transform: uppercase;
-   transition: .3s all ease-in-out;
-   &:hover {
-      color: #2baee7;  
+}
+
+.mobile-list-item {
+   outline: none;
+   @include element(anchor) {
+      color: $white;
+      text-decoration: none;
+      outline: none;
+      text-transform: uppercase;
+      transition: .3s all ease-in-out;
+      &:hover {
+         color: $icad-blue;  
+      } 
    }
 }
 
 .fass {
-  margin: 0 10px 0 0;
+   @include margin(0, 10px, 0, 0);         
 }
 
-small {
+.small-icad {
+   color: #b8b7ad;
    position: absolute;
    bottom: 0;
    margin-bottom: 12px !important;
    outline: none;
 }
 
-header {
-   display: flex;
-   justify-content: space-between;
+.selected {
+   color: $icad-blue;
 }
 
-.phone {
-   color: #58ea00;
-   position: absolute;
-   right: 160px;
-   top: 20%;
-   border: 1px solid;
-   border-radius: 50%;
-   border-color: #f2f2f2;
-   transition: .25s ease-in;
-   &:hover {
-      border-color:#58ea00;
-   }
-}
-
-.phone i {
-   margin: 10px;
-   font-size: 20px !important;
-}
+/**** Desktop styles below ****/
 
 .desktop-header {
    display: none;
@@ -125,35 +129,6 @@ header {
    position: fixed;
    border-bottom: 1px solid #f2f2f2;
    top: 0;
-}
-
-.get-a-quote {
-   position: absolute;
-   right: 0px;
-   margin: 12px 10px;
-   padding: 11px;
-   cursor: pointer;
-   text-decoration: none;
-   color: white;
-   border-radius: 2px;
-   background: #2baee7;
- }
-
- .selected {
-   color: #2baee7;
-}
-
-
-
-.bm-morph-shape {
-   fill: #373a47;
-   opacity: .96;
-}
-.bm-menu {
-   background: #373a47;
-   padding: 2em .5em 0;
-   font-size: 1.2rem;
-   opacity: 0.96;
 }
 
 @media only screen and (min-width : 768px) {

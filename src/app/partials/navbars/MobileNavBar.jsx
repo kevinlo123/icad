@@ -41,7 +41,7 @@ class MobileNavBar extends Component {
                      onClick={() => this.closeMenu()}
                      exact to="/"
                      activeClassName="selected"
-                     className={"mobile-list-item--anchor"}>
+                     className={"mobile-list-item__anchor"}>
                      <i className="fas fa-home fass"></i>
                      Home
                   </NavLink>
@@ -51,7 +51,7 @@ class MobileNavBar extends Component {
                      onClick={() => this.closeMenu()}
                      to="/vehicle_wraps" 
                      activeClassName="selected" 
-                     className={"mobile-list-item--anchor"}>
+                     className={"mobile-list-item__anchor"}>
                      <i className="fas fa-car-side fass"></i>
                      Vehicle Wraps
                   </NavLink>
@@ -61,7 +61,7 @@ class MobileNavBar extends Component {
                      onClick={() => this.closeMenu()} 
                      to="/large_format_printing" 
                      activeClassName="selected" 
-                     className={"mobile-list-item--anchor"}>
+                     className={"mobile-list-item__anchor"}>
                      <i className="fas fa-print fass"></i>
                      Large Format Printing
                   </NavLink>
@@ -71,7 +71,7 @@ class MobileNavBar extends Component {
                      onClick={() => this.closeMenu()} 
                      to="/graphic_design" 
                      activeClassName="selected" 
-                     className={"mobile-list-item--anchor"}>
+                     className={"mobile-list-item__anchor"}>
                      <i className="fas fa-image fass"></i>
                      Graphic Design
                   </NavLink>
@@ -81,17 +81,17 @@ class MobileNavBar extends Component {
                      onClick={() => this.closeMenu()} 
                      to="/about" 
                      activeClassName="selected" 
-                     className={"mobile-list-item--anchor"}>
+                     className={"mobile-list-item__anchor"}>
                      <i className="fas fa-address-card fass"></i>
                      About Us
                   </NavLink>
                </li>
-               <small>ICAD &#8482;</small>
+               <small className={"small-icad"}>ICAD &#8482;</small>
             </Menu>
-            <a href="tel:781-397-8166" className={"phone"}>
+            <a href="tel:781-397-8166" className={"mobile-header__phone"}>
                <i className="fas fa-phone"></i>
             </a>
-            <NavLink to="/quote" className={"get-a-quote"}>
+            <NavLink to="/quote" className={"mobile-header__get-a-quote"}>
                Get a Free Quote
             </NavLink>
          </nav>

@@ -1,32 +1,6 @@
 @import "../mix-ins.scss";
 @import "../variables.scss";
 
-.logo-container {
-   padding: 5rem;
- }
-
- .logo-loader {
-   margin: 8px auto;
-   display: block;
-   height: 200px;
-   width: 70px;
-   animation: crescendo .75s alternate infinite ease-in;
-}
-
-.pulse {
-   animation: pulsate 1s ease-out;
-   animation-iteration-count: infinite; 
-   opacity: 0.0;
-   border: 3px solid#2baee7;
-   border-radius: 30px;
-   height: 18px;
-   width: 18px;
-   position: relative;
-   display: inline-block;
-   margin-top: 20px;
-   text-align: center;
-}
-
 .loader-container {
    width: 215px;
    height: 215px;
@@ -35,22 +9,27 @@
    left: 50%;
    transform: translate(-50%, -50%);
    border-radius: 50%;
+   &:before, &:after {
+      content: '';
+      display: block;
+      border-radius: 50%;
+      position: absolute;
+      border: 1px solid $icad-blue;  
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      top: -15px;
+      animation: animate 1.5s linear infinite;
+      opacity: 0;
+   }
+   @include element(logo-loader) {
+      @include margin(8px, auto, 8px, auto);
+      display: block;
+      height: 200px;
+      width: 70px;
+      animation: crescendo .75s alternate infinite ease-in;
+   }   
 }
-
-.loader-container:before,.loader-container:after {
-   content: '';
-   display: block;
-   border-radius: 50%;
-   position: absolute;
-   border: 1px solid #2baee7;  
-   left: -15px;
-   right: -15px;
-   bottom: -15px;
-   top: -15px;
-   animation: animate 1.5s linear infinite;
-   opacity: 0;
-} 
-
 
 @keyframes animate {
    0% {
@@ -68,6 +47,10 @@
 
 
 @keyframes crescendo {
-   0%   {transform: scale(.5);}
-   100% {transform: scale(.75);}
- }
+   0% {
+      transform: scale(.5);
+   }
+   100% {
+      transform: scale(.75);
+   }
+}

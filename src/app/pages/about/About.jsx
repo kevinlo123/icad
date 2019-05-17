@@ -4,10 +4,10 @@ import React, { Component }  from 'react';
 class About extends Component {
    render() {
       return (
-         <div className="page-content">
+         <section className="page-content">
             <h1>About</h1>
             {/* <img src={printer} alt="Large format screen printer"/> */}
-         </div>
+         </section>
       );
    }
 }
