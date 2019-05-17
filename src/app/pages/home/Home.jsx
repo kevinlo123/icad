@@ -1,12 +1,20 @@
 import React, { Component }  from 'react';
+import HeroBanner from './components/HeroBanner.jsx';
+import Services from './components/Services.jsx';
+import Info from './components/Info.jsx';
+import ChooseUs from './components/ChooseUs.jsx';
+import Testimonies from './components/Testimonies.jsx';
 // import printer from '../../../images/printer.jpg';
 
 class Home extends Component {
    render() {
       return (
          <section className="page-content">
-            <h1>Home</h1>
-            {/* <img src={printer} alt="Large format screen printer"/> */}
+            <HeroBanner/>
+            <Services/>
+            <Info/>
+            <ChooseUs/>
+            <Testimonies/>
          </section>
       );
    }
