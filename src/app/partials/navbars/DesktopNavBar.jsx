@@ -1,11 +1,13 @@
 import React, { Component }  from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../../images/icadi.png';
 
 class DesktopNavBar extends Component {
       render() {
          return (
             <nav className={"desktop-header"}>
                <div className={"list-items-container"}>
+                  <img src={logo} alt={"icad logo"} className={"list-items-container__logo"}/>
                   <li className={"list-items-container__list-item"}>
                      <NavLink 
                         exact to="/"

@@ -1,13 +1,19 @@
 @import "../mix-ins.scss";
 @import "../variables.scss";
 
+header {
+   width: 100%;
+   height: 65px;
+   background: white;   
+}
+
 .mobile-header {
    width: 100%;
    background: $white;
    height: 65px;
    position: fixed;
-   border-bottom: 1px solid $light-grey;
    top: 0;
+   border-bottom: 1px solid $light-grey;      
    @include element(phone) {
       color: $green;
       position: absolute;
@@ -126,30 +132,47 @@ button, .bm-cross {
    width: 100%;
    background: white;
    position: fixed;
-   border-bottom: 1px solid $light-grey;
    top: 0;
 }
 
 @media only screen and (min-width : 992px) {
+   header {
+      height: 90px;
+      position: fixed;
+      top: 0;
+      border-bottom: 1px solid $light-grey;  
+      left: 50%;
+      transform: translate(-50%,-47%);  
+      top: 42px;      
+   }
    .mobile-header {
       display: none;
    }
    .desktop-header {
       display: flex;
       justify-content: space-between;
-      @include padding(1.5rem, 1rem, 1.5rem, 1rem);            
+      @include padding(1.25rem, 1rem, 1.25rem, 1rem);  
+      top: 42px;
+      max-width: 1500px;
+      left: 50%;
+      transform: translate(-50%,-47%);          
    }
 }
 
 .list-items-container {
    display: flex;
-   width: 675px;
+   width: 725px;
    justify-content: space-between;
+   @include element(logo) {
+      height: 50px;
+      @include margin(0, 10px, 0, 0);
+   }
    @include element(list-item) {
       border: none;
       list-style: none;
+      display: flex;
       @include modifier(link) {
-         @include margin(.8rem, 0, .8rem, 0);  
+         @include margin(auto, 0, auto, 0);  
          display: block;             
          font-size: $small-font;
          text-transform: uppercase;
@@ -158,7 +181,7 @@ button, .bm-cross {
          transition: .25s ease-in-out;
          &:hover {
             color: $icad-blue;
-            transform: scale(1.09);            
+            transform: scale(1.06);            
          }       
       }
    }
@@ -168,6 +191,7 @@ button, .bm-cross {
    display: flex;
    width: 200px;   
    justify-content: space-between;
+   align-items: center;
    @include element(phone) {
       color: $green;
       border: 1px solid;
