@@ -5,6 +5,7 @@ header {
    width: 100%;
    height: 65px;
    background: white;   
+   z-index: 2;
 }
 
 .mobile-header {
@@ -12,6 +13,7 @@ header {
    background: $white;
    height: 65px;
    position: fixed;
+   z-index: 2;   
    top: 0;
    border-bottom: 1px solid $light-grey;      
    @include element(phone) {
@@ -21,7 +23,7 @@ header {
       top: 20%;
       border: 1px solid;
       border-radius: 50%;
-      border-color: #f2f2f2;
+      border-color: lightgrey;
       transition: .25s ease-in;
       &:hover {
          border-color: $green;
@@ -153,7 +155,7 @@ button, .bm-cross {
       justify-content: space-between;
       @include padding(1.25rem, 1rem, 1.25rem, 1rem);  
       top: 42px;
-      max-width: 1500px;
+      max-width: 1200px;
       left: 50%;
       transform: translate(-50%,-47%);          
    }
@@ -164,7 +166,7 @@ button, .bm-cross {
    width: 725px;
    justify-content: space-between;
    @include element(logo) {
-      height: 50px;
+      height: 45px;
       @include margin(0, 10px, 0, 0);
    }
    @include element(list-item) {
@@ -196,7 +198,7 @@ button, .bm-cross {
       color: $green;
       border: 1px solid;
       border-radius: 50%;
-      border-color: #f2f2f2;
+      border-color: lightgrey;
       transition: .25s ease-in;
       &:hover {
          border-color: $green;
